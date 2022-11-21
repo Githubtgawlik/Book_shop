@@ -26,7 +26,7 @@ for (const bottom of bottoms) {
 ul.append(fragment);
 
 const icon2 = document.createElement("img");
-icon2.setAttribute("src", "../../icons/basket.png");
+icon2.setAttribute("src", "../icons/basket.png");
 icon2.setAttribute("id", "icon2");
 icon2.setAttribute("width", "50");
 icon2.setAttribute("height", "50");
