@@ -1,0 +1,76 @@
+/*
+            SPACING SYSTEM (px)
+            2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+            FONT SIZE SYSTEM (px)
+            10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+            */
+
+:root {
+  --gold: #daa520;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+#nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--black);
+  padding: 30px;
+  width: 100vw;
+  margin: auto;
+  position: sticky;
+}
+
+#icon1,
+#icon2 {
+  color: var(--gold);
+}
+
+ul {
+  flex: 4;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
+  padding-left: 24px;
+  justify-content: flex-start;
+  color: var(--white);
+}
+
+#li {
+  padding: 24px;
+}
+
+#li:hover {
+  color: var(--gold);
+  text-decoration-line: underline;
+  text-decoration-color: var(--gold);
+}
+
+h1 {
+  text-decoration-line: underline;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 24px;
+}
+
+#BooksCatalog {
+  padding: 100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+}
