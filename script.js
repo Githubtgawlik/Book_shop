@@ -26,7 +26,7 @@ for (const bottom of bottoms) {
 ul.append(fragment);
 
 const icon2 = document.createElement("img");
-icon2.setAttribute("src", "./icons/basket.png");
+icon2.setAttribute("src", "../icons/basket.png");
 icon2.setAttribute("id", "icon2");
 icon2.setAttribute("width", "50");
 icon2.setAttribute("height", "50");
@@ -37,78 +37,78 @@ const h1 = document.createElement("h1");
 h1.innerText = "Welcome to my Book Shop (under construction)";
 body.append(h1);
 
-// fetch("../books.json") //path to the file with json data
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   });
+//BOOKS Catalog//
 
-// for (var i = 0; i < arr.length; i++) {
-//   document.write("<br><br>array index: " + i);
-//   var obj = arr[i];
-//   for (var key in obj) {
-//     var value = obj[key];
-//     document.write("<br> - " + key + ": " + value);
-//   }
-// }
+const section = document.createElement("section");
+section.setAttribute("id", "section");
+body.append(section);
 
-const BooksCatalog = document.createElement("div");
-BooksCatalog.setAttribute("id", "BooksCatalog");
-body.append(BooksCatalog);
+fetch("./books.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    appendData(data);
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
 
-const book1 = document.createElement("div");
-book1.innerText = "Book1";
-BooksCatalog.append(book1);
+function appendData(data) {
+  const mainContainer = document.getElementById("section");
+  for (const i = 0; i < data.length; i++) {
+    const div = document.createElement("div");
+    const image_link_div = document.createElement("div");
+    const image_link = document.createElement("img");
+    const image_info = document.createElement("div");
+    const image_info_content = document.createElement("p");
+    const image_info_button = document.createElement("input");
+    const bottom_div = document.createElement("div");
+    const title = document.createElement("h2");
+    const author_p = document.createElement("p");
+    const price_cart_div = document.createElement("div");
+    const price = document.createElement("p");
+    const cart = document.createElement("input");
+    const about_info = document.createElement("input");
 
-const book2 = document.createElement("div");
-book2.innerText = "Book2";
-BooksCatalog.append(book2);
+    div.appendChild(image_link_div);
+    image_link_div.appendChild(image_link);
+    image_link.after(image_info);
+    image_info.appendChild(image_info_content);
+    image_link_div.after(bottom_div);
+    image_info_content.after(image_info_button);
+    bottom_div.appendChild(author_p);
+    author_p.after(title);
+    title.after(price_cart_div);
+    price_cart_div.appendChild(price);
+    price.after(about_info);
+    about_info.after(cart);
 
-const book3 = document.createElement("div");
-book3.innerText = "Book3";
-BooksCatalog.append(book3);
+    image_link.src = data[i].imageLink;
+    title.innerHTML = data[i].title;
+    author_p.innerHTML = data[i].author;
+    price.innerHTML = data[i].price + ` $`;
+    image_info_content.innerHTML = data[i].description;
 
-const myObj = JSON.parse();
-let text = "";
-for (let i in myObj.author) {
-  text += myObj.author[i] + ", ";
+    div.id = "card_div_id_inner"; // section
+    image_link_div.id = "image_link_div";
+    image_link.id = "image_id";
+    image_info.id = "image_info";
+    bottom_div.id = "bottom_div";
+    title.id = "title_id";
+    author_p.id = "author_id";
+    price_cart_div.id = "price_cat_div";
+    price.id = "price_id";
+    about_info.id = "about_info";
+    about_info.type = "submit";
+    about_info.value = "Show more";
+    cart.id = "cart";
+    cart.type = "submit";
+    cart.value = "Add to Cart";
+    image_info_button.id = "image_info_button";
+    image_info_button.type = "submit";
+    image_info_button.value = "Close";
+
+    mainContainer.appendChild(div);
+  }
 }
-document.getElementById("demo").innerHTML = text;
-//
-//
-//
-// document.getElementById("myBtn").addEventListener("click", displayDate);
-
-// document
-//   .getElementsByClassName("myBtn")[1]
-//   .addEventListener("click", displayDate);
-
-// document
-//   .getElementsByTagName("button")[0]
-//   .addEventListener("click", displayDate);
-
-// function displayDate() {
-//   document.getElementById("demo").innerHTML = Date();
-// }
-
-// const books = [
-//   {
-//     title: "...book1.....",
-//     author: "...... ",
-//     price: 123,
-//     imgUrl: "jakiś URL z neta",
-//   },
-
-//   {
-//     title: "...book 2......",
-//     author: "...... ",
-//     price: 123,
-//     imgUrl: "jakiś URL z neta",
-//   },
-// ];
-
-// const para = document.createElement("div");
-// const node = document.createTextNode("This is new.");
-// para.appendChild(node);

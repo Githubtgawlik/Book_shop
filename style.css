@@ -22,6 +22,7 @@ body {
   font-weight: 400;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--white);
+  /* background-color: var(--black); */
   background-color: var(--black);
 }
 
@@ -67,10 +68,18 @@ h1 {
   margin-bottom: 24px;
 }
 
-#BooksCatalog {
+#section {
+  padding: 60px;
+  margin: auto;
+  display: flex;
+  /* flex-direction: column; */
+  /* height: 150vh; */
+}
+
+/* #BooksCatalog {
   padding: 100px;
   margin: auto;
   display: flex;
   flex-direction: column;
   height: 150vh;
-}
+} */
