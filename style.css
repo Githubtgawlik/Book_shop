@@ -66,10 +66,24 @@ h1 {
   margin-bottom: 24px;
 }
 
+#main {
+  display: flex;
+}
+
 #section {
-  padding: 60px;
+  margin-top: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
   display: flex;
   flex-wrap: wrap;
+}
+
+#order_section {
+  margin-top: 60px;
+  margin-right: 60px;
+  background-color: aqua;
+  width: 400px;
+  display: flex;
 }
 
 #book_card {
@@ -78,6 +92,7 @@ h1 {
   flex: 1;
   flex-direction: column;
 }
+
 #book_image {
   height: 200px;
   justify-content: center;

@@ -39,13 +39,13 @@ body.append(h1);
 
 //BOOKS Catalog//
 
-const section = document.createElement("section");
-section.setAttribute("id", "section");
-body.append(section);
+const main = document.createElement("main");
+main.setAttribute("id", "main");
+body.append(main);
 
 const section = document.createElement("section");
 section.setAttribute("id", "section");
-body.append(section);
+main.append(section);
 
 fetch("./books.json")
   .then(function (response) {
@@ -116,6 +116,18 @@ function appendData(data) {
     mainContainer.appendChild(div);
   }
 }
+
+const order_section = document.createElement("section");
+order_section.setAttribute("id", "order_section");
+main.append(order_section);
+
+const my_order = document.createElement("div");
+my_order.setAttribute("id", "my_order");
+order_section.append(my_order);
+
+const h2 = document.createElement("h2");
+h2.innerText = "My order";
+order_section.append(h2);
 
 const footer = document.createElement("footer");
 footer.setAttribute("id", "footer");
