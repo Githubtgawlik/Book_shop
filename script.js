@@ -43,6 +43,10 @@ const section = document.createElement("section");
 section.setAttribute("id", "section");
 body.append(section);
 
+const section = document.createElement("section");
+section.setAttribute("id", "section");
+body.append(section);
+
 fetch("./books.json")
   .then(function (response) {
     return response.json();
@@ -64,9 +68,9 @@ function appendData(data) {
     let book_info_content = document.createElement("p");
     let book_info_button = document.createElement("input");
     let book_description = document.createElement("div");
-    let title = document.createElement("h2");
-    let author_p = document.createElement("p");
-    let price_cart_div = document.createElement("div");
+    let book_title = document.createElement("h2");
+    let book_author_p = document.createElement("p");
+    let book_price_cart = document.createElement("div");
     let price = document.createElement("p");
     let cart = document.createElement("input");
     let about_info = document.createElement("input");
@@ -77,16 +81,16 @@ function appendData(data) {
     book_info.appendChild(book_info_content);
     book_card_img.after(book_description);
     book_info_content.after(book_info_button);
-    book_description.appendChild(author_p);
-    author_p.after(title);
-    title.after(price_cart_div);
-    price_cart_div.appendChild(price);
+    book_description.appendChild(book_author_p);
+    book_author_p.after(book_title);
+    book_title.after(book_price_cart);
+    book_price_cart.appendChild(price);
     price.after(about_info);
     about_info.after(cart);
 
     book_image_link.src = data[i].imageLink;
-    title.innerHTML = data[i].title;
-    author_p.innerHTML = data[i].author;
+    book_title.innerHTML = data[i].title;
+    book_author_p.innerHTML = data[i].author;
     price.innerHTML = data[i].price + ` $`;
     book_info_content.innerHTML = data[i].description;
 
@@ -95,10 +99,10 @@ function appendData(data) {
     book_image_link.id = "book_image";
     book_info.id = "book_info";
     book_description.id = "book_description";
-    title.id = "title_id";
-    author_p.id = "author_id";
-    price_cart_div.id = "price_cat_div";
-    price.id = "price_id";
+    book_title.id = "book_book_title_id";
+    book_author_p.id = "book_author_id";
+    book_price_cart.id = "book_price_cart";
+    price.id = "price";
     about_info.id = "about_info";
     about_info.type = "submit";
     about_info.value = "Show more";
@@ -116,3 +120,12 @@ function appendData(data) {
 const footer = document.createElement("footer");
 footer.setAttribute("id", "footer");
 body.append(footer);
+
+const footer_div = document.createElement("div");
+footer_div.setAttribute("id", "footer_div");
+footer.append(footer_div);
+
+const footer_txt = document.createElement("p");
+footer_txt.setAttribute("id", "footer_txt");
+footer_div.append(footer_txt);
+footer_txt.innerHTML = "RSSchool Example - created by Tomasz Gawlik";

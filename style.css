@@ -30,7 +30,6 @@ body {
   justify-content: space-evenly;
   background-color: var(--black);
   padding: 30px;
-  width: 100vw;
   margin: auto;
   position: sticky;
 }
@@ -63,21 +62,17 @@ ul {
 h1 {
   text-decoration-line: underline;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 24px;
 }
 
 #section {
   padding: 60px;
-  /* margin: auto; */
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
-  /* height: 150vh; */
 }
 
 #book_card {
-  /* background-color: aqua; */
   margin: 16px;
   display: flex;
   flex: 1;
@@ -92,15 +87,12 @@ h1 {
   display: flex;
 }
 
-/* #BooksCatalog {
-  padding: 100px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  height: 150vh;
-} */
-
 #footer {
-  background-color: aqua;
-  height: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+#footer_txt {
+  margin: 24px;
+  color: var(--gold);
 }
